@@ -14,7 +14,7 @@ public enum Prioridade {
 	
 	public Integer getCodigo() {
 		return codigo;
-	}
+	} 
 
 
 	public String getDescricao() {
