@@ -13,6 +13,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 import com.douglas.helpdesk.domain.Tecnico;
 import com.douglas.helpdesk.domain.enums.Perfil;
@@ -21,9 +22,17 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class TecnicoDTO {
 	
 	protected Integer id;
+	
+	@NotNull(message = "O campo NOME é obrigatório.")
 	protected String nome;
+	
+	@NotNull(message = "O campo CPF é obrigatório.")
 	protected String cpf;
+	
+	@NotNull(message = "O campo E-MAIL é obrigatório.")
 	protected String email;
+	
+	@NotNull(message = "O campo SENHA é obrigatório.")
 	protected String senha;
 	protected Set<Integer> perfis = new HashSet<>();
 	
