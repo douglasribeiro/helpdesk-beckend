@@ -35,7 +35,7 @@ public class ResourceExceptionHandler {
 		ValidationError erros = new ValidationError(
 				System.currentTimeMillis(), 
 				HttpStatus.BAD_REQUEST.value(), 
-				"Validation error",
+				"Validation error", 
 				"Erro na validação dos campos.", 
 				request.getRequestURI());
 		
