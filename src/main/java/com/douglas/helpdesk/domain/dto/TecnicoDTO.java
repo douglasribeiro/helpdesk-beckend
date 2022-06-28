@@ -32,6 +32,7 @@ public class TecnicoDTO {
 
 	public TecnicoDTO() {
 		super();
+		addPerfil(Perfil.CLIENTE);
 	}
 
 	public TecnicoDTO(Tecnico obj) {
