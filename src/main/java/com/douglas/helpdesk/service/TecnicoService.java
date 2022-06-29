@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.douglas.helpdesk.domain.Pessoa;
@@ -23,6 +24,9 @@ public class TecnicoService {
 	@Autowired
 	private PessoaRepository pessoaRepository;
 	
+	@Autowired
+	private BCryptPasswordEncoder encoder;
+	
 	public Tecnico findById(Integer id) {
 		Optional<Tecnico> obj = tecnicoRepository.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto nao encontrado!"));
@@ -34,6 +38,7 @@ public class TecnicoService {
 
 	public Tecnico save(TecnicoDTO tecnicoDTO) {
 		Tecnico obj = new Tecnico(tecnicoDTO);
+		obj.setSenha(encoder.encode(tecnicoDTO.getSenha()));
 		validaCpfEmail(tecnicoDTO);
 		obj.setId(null);
 		return tecnicoRepository.save(obj);
