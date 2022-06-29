@@ -7,11 +7,11 @@ import java.util.stream.Collectors;
 
 import javax.validation.constraints.NotNull;
 
-import com.douglas.helpdesk.domain.Tecnico;
+import com.douglas.helpdesk.domain.Cliente;
 import com.douglas.helpdesk.domain.enums.Perfil;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-public class TecnicoDTO {
+public class ClienteDTO {
 	
 	protected Integer id;
 	
@@ -26,17 +26,17 @@ public class TecnicoDTO {
 	
 	@NotNull(message = "O campo SENHA é obrigatório.")
 	protected String senha;
-	protected Set<Integer> perfis = new HashSet<>();
 	
+	protected Set<Integer> perfis = new HashSet<>();
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	protected LocalDate dataCriacao = LocalDate.now();
-
-	public TecnicoDTO() {
+	
+	public ClienteDTO() {
 		super();
-		addPerfil(Perfil.CLIENTE);
+		
 	}
 
-	public TecnicoDTO(Tecnico obj) {
+	public ClienteDTO(Cliente obj) {
 		super();
 		this.id = obj.getId();
 		this.nome = obj.getNome();
@@ -102,7 +102,5 @@ public class TecnicoDTO {
 	public void setDataCriacao(LocalDate dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
-
-	
 	
 }
