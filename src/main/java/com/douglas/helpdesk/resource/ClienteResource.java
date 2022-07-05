@@ -25,7 +25,7 @@ import com.douglas.helpdesk.service.ClienteService;
 
 
 @RestController
-@RequestMapping(value = "/Clientes")
+@RequestMapping(value = "/clientes")
 public class ClienteResource {
 
 	@Autowired
