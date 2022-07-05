@@ -29,7 +29,7 @@ public class ChamadoDTO implements Serializable {
 	@NotNull(message = "O campo CLIENTE é requerido.")
 	private Integer cliente;
 	private String nomeTecnico;
-	private String nomeClinte;
+	private String nomeCliente;
 	
 	public ChamadoDTO() {
 		super();
@@ -47,7 +47,7 @@ public class ChamadoDTO implements Serializable {
 		this.tecnico = obj.getTecnico().getId();
 		this.cliente = obj.getCliente().getId();
 		this.nomeTecnico = obj.getTecnico().getNome();
-		this.nomeClinte = obj.getCliente().getNome();
+		this.nomeCliente = obj.getCliente().getNome();
 	}
 
 	public Integer getId() {
@@ -130,12 +130,12 @@ public class ChamadoDTO implements Serializable {
 		this.nomeTecnico = nomeTecnico;
 	}
 
-	public String getNomeClinte() {
-		return nomeClinte;
+	public String getNomeCliente() {
+		return nomeCliente;
 	}
 
-	public void setNomeClinte(String nomeClinte) {
-		this.nomeClinte = nomeClinte;
+	public void setNomeCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
 	}
 	
 		
